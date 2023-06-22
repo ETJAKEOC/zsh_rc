@@ -1,0 +1,21 @@
+alias aria='aria2c -j 16 -x 16'
+alias VDF='/home/jake/.local/vid-dedeup/VDF.GUI'
+alias AIUP='/home/jake/git/AIUpscale/UPSCALE.sh'
+alias DARCH='ssh -X -p 9461 jake@10.0.0.202'
+alias dir='dir --color=always'
+alias vdir='vdir --color=always'
+alias grep='grep --color=always'
+alias ls='ls --color=always -A'
+alias nano='nano -Llm'
+alias sensors='watch -n 1 sensors -f'
+alias myip="curl http://ipecho.net/plain; echo"
+alias dus='du -axhd1 | sort -n | sort -h'
+alias yay-remove='yay -Rsnc'
+alias lsblk='lsblk -f'
+alias sys-info='fastfetch --gpu-temp true --cpu-temp true'
+alias fdisk='sudo fdisk'
+alias lmake="CC='/usr/local/bin/cclang' CXX='/usr/local/bin/cclang++' LD=ld.lld AR=llvm-ar NM=llvm-nm STRIP=llvm-strip OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf HOSTCC='/usr/local/bin/cclang' HOSTCXX='/usr/local/bin/cclang++' HOSTAR=llvm-ar HOSTLD=ld.lld make -j5 LLVM=1 LLVM_IAS=1"
+alias screen_dim="brightnessctl set 1 acpi_vide0"
+alias screen_half="brightnessctl set 5 acpi_vide0"
+alias screen_bright="brightnessctl set 10 acpi_vide0"
+alias systemctl='sudo systemctl'
