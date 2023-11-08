@@ -1,21 +1,36 @@
-alias aria='aria2c -j 16 -x 16'
-alias VDF='/home/jake/.local/vid-dedeup/VDF.GUI'
-alias AIUP='/home/jake/git/AIUpscale/UPSCALE.sh'
-alias DARCH='ssh -X -p 9461 jake@10.0.0.202'
-alias dir='dir --color=always'
-alias vdir='vdir --color=always'
-alias grep='grep --color=always'
-alias ls='ls --color=always -A'
-alias nano='nano -Llm'
-alias sensors='watch -n 1 sensors -f'
-alias myip="curl http://ipecho.net/plain; echo"
-alias dus='du -axhd1 | sort -n | sort -h'
-alias yay-remove='yay -Rsnc'
+alias resource='source ~/.zshrc'
+
+alias ls='eza -a --icons'
+alias dus='sudo du -axhd1 | sort -n | sort -h'
 alias lsblk='lsblk -f'
-alias sys-info='fastfetch --gpu-temp true --cpu-temp true'
 alias fdisk='sudo fdisk'
-alias lmake="CC='/usr/local/bin/cclang' CXX='/usr/local/bin/cclang++' LD=ld.lld AR=llvm-ar NM=llvm-nm STRIP=llvm-strip OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf HOSTCC='/usr/local/bin/cclang' HOSTCXX='/usr/local/bin/cclang++' HOSTAR=llvm-ar HOSTLD=ld.lld make -j5 LLVM=1 LLVM_IAS=1"
+alias nano='nano -Llm'
+
+alias lmakepkg='CC="/usr/bin/clang" CXX="/usr/bin/clang++" CPP="/usr/bin/clang-cpp" LD="/usr/bin/lld" LDFLAGS="-fuse-ld=lld" AR="/usr/bin/llvm-ar" RANLIB="/usr/bin/llvm-ranlib" NM="/usr/bin/llvm-nm" ADDR2LINE="/usr/bin/llvm-addr2line" OBJCOPY="/usr/bin/llvm-objcopy" OBJDUMP="/usr/bin/llvm-objdump" READELF="/usr/bin/llvm-readelf" STRIP="/usr/bin/llvm-strip" makepkg'
+alias lmake="CC='/usr/local/bin/clang' CXX='/usr/local/bin/clang++' LD=ld.lld AR=llvm-ar NM=llvm-nm STRIP=llvm-strip OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf HOSTCC='/usr/local/bin/clang' HOSTCXX='/usr/local/bin/clang++' HOSTAR=llvm-ar HOSTLD=ld.lld ccache make LLVM=1 LLVM_IAS=1"
+alias clear-caches="sudo su -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
+
 alias screen_dim="brightnessctl set 1 acpi_vide0"
+alias screen_30="brightnessctl set 3 acpi_vide0"
 alias screen_half="brightnessctl set 5 acpi_vide0"
+alias screen_60="brightnessctl set 6 acpi_vide0"
 alias screen_bright="brightnessctl set 10 acpi_vide0"
-alias systemctl='sudo systemctl'
+
+alias aria='aria2c -j 16 -x 16'
+alias myip="curl http://ipecho.net/plain; echo"
+alias weather='curl wttr.in'
+
+alias yay-clang='sudo ln -sf /etc/makepkg.conf.clang /etc/makepkg.conf'
+alias yay-clean='yay -Qtdq'
+alias yay-gcc='sudo ln -sf /etc/makepkg.conf.gcc /etc/makepkg.conf'
+alias yay-rebuild='yay -S --editmenu --save --rebuildtree $(pacman -Qmq)'
+alias yay-remove='yay -Rsn'
+# alias yay-upgrade="yay -Syuuvv --devel --overwrite '*'"
+
+alias plex_down='sudo systemctl stop plexmediaserver'
+alias plex_up='sudo systemctl restart plexmediaserver'
+
+alias vpn_down='sudo pkill openvpn'
+alias vpn_up='sudo openvpn --config /etc/openvpn/client/us-free-57.protonvpn.net.udp.ovpn --daemon --auth-user-pass /home/jake/Documents/protonvpn.txt'
+
+alias GIT='cd /STORAGE/GIT && clear'
