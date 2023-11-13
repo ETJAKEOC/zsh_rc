@@ -2,10 +2,9 @@ plugins=(adb aliases alias-finder archlinux branch colored-man-pages colorize co
 
 export ZSH=$HOME/.oh-my-zsh
 export PATH=/usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin:/opt/android-sdk/platform-tools:$PATH
-#export FZF_BASE=$ZSH/custom/plugins/fzf-zsh-plugin
 
 source $ZSH/oh-my-zsh.sh
-source /etc/profile
+emulate sh -c 'source /etc/profile'
 source /etc/environment
 
 ZSH_THEME="agnoster"

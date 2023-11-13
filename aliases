@@ -1,5 +1,8 @@
+alias gen_pass="openssl rand -base64 20 | tr -dc 'a-zA-Z0-9' | head -c 20"
+
 alias resource='source ~/.zshrc'
 
+alias dfd='df -h -x tmpfs'
 alias ls='eza -a --icons'
 alias dus='sudo du -axhd1 | sort -n | sort -h'
 alias lsblk='lsblk -f'
@@ -7,7 +10,7 @@ alias fdisk='sudo fdisk'
 alias nano='nano -Llm'
 
 alias lmakepkg='CC="/usr/bin/clang" CXX="/usr/bin/clang++" CPP="/usr/bin/clang-cpp" LD="/usr/bin/lld" LDFLAGS="-fuse-ld=lld" AR="/usr/bin/llvm-ar" RANLIB="/usr/bin/llvm-ranlib" NM="/usr/bin/llvm-nm" ADDR2LINE="/usr/bin/llvm-addr2line" OBJCOPY="/usr/bin/llvm-objcopy" OBJDUMP="/usr/bin/llvm-objdump" READELF="/usr/bin/llvm-readelf" STRIP="/usr/bin/llvm-strip" makepkg'
-alias lmake="CC='/usr/local/bin/clang' CXX='/usr/local/bin/clang++' LD=ld.lld AR=llvm-ar NM=llvm-nm STRIP=llvm-strip OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf HOSTCC='/usr/local/bin/clang' HOSTCXX='/usr/local/bin/clang++' HOSTAR=llvm-ar HOSTLD=ld.lld ccache make LLVM=1 LLVM_IAS=1"
+alias lmake="CC='/usr/bin/clang' CXX='/usr/bin/clang++' LD=ld.lld AR=llvm-ar NM=llvm-nm STRIP=llvm-strip OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf HOSTCC='/usr/bin/clang' HOSTCXX='/usr/bin/clang++' HOSTAR=llvm-ar HOSTLD=ld.lld ccache make LLVM=1 LLVM_IAS=1"
 alias clear-caches="sudo su -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 
 alias screen_dim="brightnessctl set 1 acpi_vide0"
@@ -20,12 +23,9 @@ alias aria='aria2c -j 16 -x 16'
 alias myip="curl http://ipecho.net/plain; echo"
 alias weather='curl wttr.in'
 
-alias yay-clang='sudo ln -sf /etc/makepkg.conf.clang /etc/makepkg.conf'
 alias yay-clean='yay -Qtdq'
-alias yay-gcc='sudo ln -sf /etc/makepkg.conf.gcc /etc/makepkg.conf'
 alias yay-rebuild='yay -S --editmenu --save --rebuildtree $(pacman -Qmq)'
-alias yay-remove='yay -Rsn'
-# alias yay-upgrade="yay -Syuuvv --devel --overwrite '*'"
+alias yay-remove='yay -Rsncu'
 
 alias plex_down='sudo systemctl stop plexmediaserver'
 alias plex_up='sudo systemctl restart plexmediaserver'
@@ -34,3 +34,5 @@ alias vpn_down='sudo pkill openvpn'
 alias vpn_up='sudo openvpn --config /etc/openvpn/client/us-free-57.protonvpn.net.udp.ovpn --daemon --auth-user-pass /home/jake/Documents/protonvpn.txt'
 
 alias GIT='cd /STORAGE/GIT && clear'
+
+alias tkg-clean='sudo rm -rf linux-src-git linux*.zst logs pkg'
