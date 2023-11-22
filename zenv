@@ -7,6 +7,8 @@ source $ZSH/oh-my-zsh.sh
 emulate sh -c 'source /etc/profile'
 source /etc/environment
 
+export MENUCONFIG_COLOR=blackbg
+MENUCONFIG_COLOR=blackbg
 ZSH_THEME="agnoster"
 CASE_SENSITIVE="true"
 ENABLE_CORRECTION="true"

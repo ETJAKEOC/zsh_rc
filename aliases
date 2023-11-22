@@ -35,4 +35,6 @@ alias vpn_up='sudo openvpn --config /etc/openvpn/client/us-free-57.protonvpn.net
 
 alias GIT='cd /STORAGE/GIT && clear'
 
+alias tkg='cd /STORAGE/linux-tkg'
 alias tkg-clean='sudo rm -rf linux-src-git linux*.zst logs pkg'
+alias tkg-build="KBUILD_CFLAGS+='-fivopts -fmodulo-sched' lmakepkg --skippgpcheck --skipinteg --skipchecksums -si"
