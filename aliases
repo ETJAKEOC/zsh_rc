@@ -24,7 +24,7 @@ alias myip="curl http://ipecho.net/plain; echo"
 alias weather='curl wttr.in'
 
 alias yay-clean='yay -Qtdq'
-alias yay-rebuild='yay -S --editmenu --save --rebuildtree $(pacman -Qmq)'
+alias yay-rebuild="yay -S --editmenu --save --rebuildtree --overwrite '*' $(yay -Qmq)"
 alias yay-remove='yay -Rsncu'
 
 alias plex_down='sudo systemctl stop plexmediaserver'
@@ -36,5 +36,7 @@ alias vpn_up='sudo openvpn --config /etc/openvpn/client/us-free-57.protonvpn.net
 alias GIT='cd /STORAGE/GIT && clear'
 
 alias tkg='cd /STORAGE/linux-tkg'
-alias tkg-clean='sudo rm -rf linux-src-git linux*.zst logs pkg'
+alias tkg-clean='sudo rm -rf linux-src-git *.zst logs pkg'
 alias tkg-build="KBUILD_CFLAGS+='-fivopts -fmodulo-sched' lmakepkg --skippgpcheck --skipinteg --skipchecksums -si"
+
+alias MR='cd /STORAGE/MOTO_ROM'
