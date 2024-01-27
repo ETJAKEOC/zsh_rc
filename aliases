@@ -36,7 +36,12 @@ alias vpn_up='sudo openvpn --config /etc/openvpn/client/us-free-57.protonvpn.net
 alias GIT='cd /STORAGE/GIT && clear'
 
 alias tkg='cd /STORAGE/linux-tkg'
-alias tkg-clean='sudo rm -rf linux-src-git *.zst logs pkg'
+alias tkg-clean='cd /STORAGE/linux-tkg && sudo rm -rf linux-src-git *.zst logs pkg src'
 alias tkg-build="KBUILD_CFLAGS+='-fivopts -fmodulo-sched' lmakepkg --skippgpcheck --skipinteg --skipchecksums -si"
 
 alias MR='cd /STORAGE/MOTO_ROM'
+alias ash='adb shell'
+
+alias stop_YT='sudo systemctl stop cronie'
+alias start_YT='sudo systemctl restart cronie'
+alias gentoo='sudo chroot ~/Documents/gentoo /bin/bash'
