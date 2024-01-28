@@ -44,4 +44,7 @@ alias ash='adb shell'
 
 alias stop_YT='sudo systemctl stop cronie'
 alias start_YT='sudo systemctl restart cronie'
+
 alias gentoo='sudo chroot ~/Documents/gentoo /bin/bash'
+
+alias home='cd /home/dirs'
