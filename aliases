@@ -4,13 +4,13 @@ alias resource='source ~/.zshrc'
 
 alias dfd='df -h -x tmpfs'
 alias ls='eza -a --icons'
-alias dus='sudo du -axhd1 | sort -n | sort -h'
+alias dus='sudo du -xd1'
 alias lsblk='lsblk -f'
 alias fdisk='sudo fdisk'
 alias nano='nano -Llm'
 
 alias lmakepkg='CC="/usr/bin/clang" CXX="/usr/bin/clang++" CPP="/usr/bin/clang-cpp" LD="/usr/bin/lld" LDFLAGS="-fuse-ld=lld" AR="/usr/bin/llvm-ar" RANLIB="/usr/bin/llvm-ranlib" NM="/usr/bin/llvm-nm" ADDR2LINE="/usr/bin/llvm-addr2line" OBJCOPY="/usr/bin/llvm-objcopy" OBJDUMP="/usr/bin/llvm-objdump" READELF="/usr/bin/llvm-readelf" STRIP="/usr/bin/llvm-strip" makepkg'
-alias lmake="CC='/usr/bin/clang' CXX='/usr/bin/clang++' LD=ld.lld AR=llvm-ar NM=llvm-nm STRIP=llvm-strip OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf HOSTCC='/usr/bin/clang' HOSTCXX='/usr/bin/clang++' HOSTAR=llvm-ar HOSTLD=ld.lld ccache make LLVM=1 LLVM_IAS=1"
+alias lmake="CC='/usr/bin/clang' CXX='/usr/bin/clang++' LD='/usr/bin/ld.lld' AR='/usr/bin/llvm-ar' NM='/usr/bin/llvm-nm' STRIP='/usr/bin/llvm-strip' OBJCOPY='/usr/bin/llvm-objcopy' OBJDUMP='/usr/bin/llvm-objdump' READELF='/usr/bin/llvm-readelf' HOSTCC='/usr/bin/clang' HOSTCXX='/usr/bin/clang++' HOSTAR='/usr/bin/llvm-ar' HOSTLD='/usr/bin/ld.lld' ccache make LLVM=1 LLVM_IAS=1"
 alias clear-caches="sudo su -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 
 alias screen_dim="brightnessctl set 1 acpi_vide0"
@@ -48,3 +48,6 @@ alias start_YT='sudo systemctl restart cronie'
 alias gentoo='sudo chroot ~/Documents/gentoo /bin/bash'
 
 alias home='cd /home/dirs'
+alias emerge-update='emerge -avDuNe @world'
+alias kyber_mode='echo "kyber" | sudo tee /sys/block/sd{a,b,c,d}/queue/scheduler'
+alias dsched='cat /sys/block/*/queue/scheduler'
